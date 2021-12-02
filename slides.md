@@ -1,4 +1,4 @@
-# A deep dive into Docker
+# Deploying SQL Server to Kubernetes using Helm
 
 ---
 
