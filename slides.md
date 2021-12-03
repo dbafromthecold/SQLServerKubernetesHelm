@@ -16,11 +16,17 @@
 ## Session Aim
 <!-- .slide: style="text-align: left;"> -->
 
-
+To provide an overview of Helm and how it can be used to deploy applications (SQL Server) to Kubernetes
 ---
 
 ## Agenda
 <!-- .slide: style="text-align: left;"> -->
+
+An overview of Helm<br>
+How to deploy an application (SQL Server) to Kubernetes using Helm<br>
+Upgrading an application using Helm<br>
+Rolling back an upgrade using Helm<br>
+Chart Repositories
 
 ---
 
@@ -30,3 +36,4 @@
 
 ## Resources
 
+https://github.com/dbafromthecold/SQLServerKubernetesHelm
