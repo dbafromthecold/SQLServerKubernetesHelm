@@ -34,5 +34,5 @@ To provide an overview of Helm and how it can be used to deploy applications (SQ
 ---
 
 ## Resources
-
-https://github.com/dbafromthecold/SQLServerKubernetesHelm
+<!-- .slide: style="text-align: left;"> -->
+<a href="https://github.com/dbafromthecold/SQLServerKubernetesHelm">https://github.com/dbafromthecold/SQLServerKubernetesHelm</a><br>
