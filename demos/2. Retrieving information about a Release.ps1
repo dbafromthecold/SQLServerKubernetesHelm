@@ -18,27 +18,27 @@ helm list
 
 
 # view status of release
-helm status mysql
+helm status azuresqledge
 
 
 
 # get release manifests
-helm get manifest mysql > C:\Temp\manifests.txt
+helm get manifest azuresqledge > C:\Temp\manifests.txt
 
 
 
 # get release values - no user values were supplied so file will be blank
-helm get values mysql > C:\Temp\values.txt
+helm get values azuresqledge > C:\Temp\values.txt
 
 
 
 # get release notes
-helm get notes mysql > C:\Temp\notes.txt
+helm get notes azuresqledge > C:\Temp\notes.txt
 
 
 
 # get all from release
-helm get all mysql  > C:\Temp\all.txt
+helm get all azuresqledge  > C:\Temp\all.txt
 
 
 
@@ -49,12 +49,12 @@ kubectl get all
 
 
 # view release history
-helm history mysql
+helm history azuresqledge
 
 
 
 # uninstall a release
-helm uninstall mysql --keep-history
+helm uninstall azuresqledge --keep-history
 
 
 
@@ -69,7 +69,7 @@ helm list --all
 
 
 # delete release
-helm delete mysql
+helm delete azuresqledge
 
 
 

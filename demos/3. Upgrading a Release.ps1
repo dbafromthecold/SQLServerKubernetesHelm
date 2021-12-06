@@ -13,17 +13,17 @@
 
 
 # search the repository for a chart
-helm search repo andrewpruski/mysql
+helm search repo dbafromthecold/azuresqledge
 
 
 
 # search the stable repository for a chart and retrieve the different versions (2 in the repo)
-helm search repo andrewpruski/mysql --versions
+helm search repo dbafromthecold/azuresqledge --versions
 
 
 
 # install a specific version of the chart
-helm install mysql andrewpruski/mysql --version 1.6.3 
+helm install mysql dbafromthecold/azuresqledge --version 1.6.3 
 
 
 
@@ -38,7 +38,7 @@ kubectl get all
 
 
 # upgrade the release
-helm upgrade mysql andrewpruski/mysql --version 1.6.4
+helm upgrade mysql dbafromthecold/azuresqledge --version 1.6.4
 
 
 

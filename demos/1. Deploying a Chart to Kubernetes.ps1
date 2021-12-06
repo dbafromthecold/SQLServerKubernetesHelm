@@ -27,38 +27,43 @@ helm repo list
 
 
 
-# search repository for a mysql chart
-helm search repo andrewpruski/mysql
+# add repository
+helm repo add dbafromthecold XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+# search repository for a azuresqledge chart
+helm search repo dbafromthecold/azuresqledge
 
 
 
 # show chart definition
-helm show chart andrewpruski/mysql
+helm show chart dbafromthecold/azuresqledge
 
 
 
 # show chart README
-helm show readme andrewpruski/mysql
+helm show readme dbafromthecold/azuresqledge
 
 
 
 # pipe README to file
-helm show readme andrewpruski/mysql > C:\Temp\README.txt
+helm show readme dbafromthecold/azuresqledge > C:\Temp\README.txt
 
 
 
 # show chart values
-helm show values andrewpruski/mysql > C:\Temp\values.txt
+helm show values dbafromthecold/azuresqledge > C:\Temp\values.txt
 
 
 
 # test deployment of chart
-helm install mysql andrewpruski/mysql --dry-run --debug
+helm install azuresqledge dbafromthecold/azuresqledge --dry-run --debug
 
 
 
 # deploy chart
-helm install mysql andrewpruski/mysql
+helm install azuresqledge dbafromthecold/azuresqledge
 
 
 
