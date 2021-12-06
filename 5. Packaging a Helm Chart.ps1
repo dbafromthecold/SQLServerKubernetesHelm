@@ -1,11 +1,9 @@
 ###################################################################################################
 ###################################################################################################
 #
-# https://www.pluralsight.com/courses/kubernetes-package-administration-helm
+# https://github.com/dbafromthecold/SQLServerKubernetesHelm
 # 
-# Module 4 of Kubernetes Package Administration with Helm
-# 
-# Packaging a Helm Chart
+# Packaging a chart
 #  
 # Andrew Pruski
 # 

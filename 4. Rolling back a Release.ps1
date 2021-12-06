@@ -1,11 +1,9 @@
 ###################################################################################################
 ###################################################################################################
 #
-# https://www.pluralsight.com/courses/kubernetes-package-administration-helm
-#
-# Module 3 of Kubernetes Package Administration with Helm
+# https://github.com/dbafromthecold/SQLServerKubernetesHelm
 # 
-# Rolling back a Release
+# Rolling back a release
 #  
 # Andrew Pruski
 # 

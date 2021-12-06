@@ -1,9 +1,7 @@
 ###################################################################################################
 ###################################################################################################
 #
-# https://www.pluralsight.com/courses/kubernetes-package-administration-helm
-# 
-# Module 3 of Kubernetes Package Administration with Helm
+# https://github.com/dbafromthecold/SQLServerKubernetesHelm
 # 
 # Deploying a Chart to Kubernetes
 #  

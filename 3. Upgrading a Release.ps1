@@ -1,14 +1,12 @@
 ###################################################################################################
 ###################################################################################################
 #
-# https://www.pluralsight.com/courses/kubernetes-package-administration-helm
-#
-# Module 3 of Kubernetes Package Administration with Helm
+# https://github.com/dbafromthecold/SQLServerKubernetesHelm
 # 
-# Upgrading a Release
+# Upgrading a release
 #  
 # Andrew Pruski
-#
+# 
 ###################################################################################################
 ###################################################################################################
 

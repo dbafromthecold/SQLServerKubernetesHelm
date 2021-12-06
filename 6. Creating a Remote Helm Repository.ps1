@@ -1,11 +1,9 @@
 ###################################################################################################
 ###################################################################################################
 #
-# https://www.pluralsight.com/courses/kubernetes-package-administration-helm
-#
-# Module 4 of Kubernetes Package Administration with Helm
+# https://github.com/dbafromthecold/SQLServerKubernetesHelm
 # 
-# Creating a local Helm Repository - GitHub
+# Creating a remote Helm repository
 #  
 # Andrew Pruski
 # 
