@@ -18,27 +18,27 @@ helm list
 
 
 # view status of release
-helm status azuresqledge
+helm status azure-sql-edge
 
 
 
 # get release manifests
-helm get manifest azuresqledge > C:\Temp\manifests.txt
+helm get manifest azure-sql-edge > C:\Temp\manifests.txt
 
 
 
 # get release values - no user values were supplied so file will be blank
-helm get values azuresqledge > C:\Temp\values.txt
+helm get values azure-sql-edge > C:\Temp\values.txt
 
 
 
 # get release notes
-helm get notes azuresqledge > C:\Temp\notes.txt
+helm get notes azure-sql-edge > C:\Temp\notes.txt
 
 
 
 # get all from release
-helm get all azuresqledge  > C:\Temp\all.txt
+helm get all azure-sql-edge  > C:\Temp\all.txt
 
 
 
@@ -49,12 +49,12 @@ kubectl get all
 
 
 # view release history
-helm history azuresqledge
+helm history azure-sql-edge
 
 
 
 # uninstall a release
-helm uninstall azuresqledge --keep-history
+helm uninstall azure-sql-edge --keep-history
 
 
 

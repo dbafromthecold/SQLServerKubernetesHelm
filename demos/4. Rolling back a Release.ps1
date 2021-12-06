@@ -18,7 +18,7 @@ helm list
 
 
 # view release history
-helm history mysql
+helm history azure-sql-edge
 
 
 
@@ -33,12 +33,12 @@ kubectl get replicasets
 
 
 # rollback release
-helm rollback mysql 1
+helm rollback azure-sql-edge 1
 
 
 
 # view release history
-helm history mysql
+helm history azure-sql-edge
 
 
 
@@ -64,22 +64,22 @@ kubectl get secrets
 
 
 # clean up previous release
-helm delete mysql
+helm delete azure-sql-edge
 
 
 
 # deploy specific version of chart
-helm install mysql stable/mysql --version 1.6.3 
+helm install azure-sql-edge dbafromthecold/azure-sql-edge --version 1.0.0
 
 
 
 # upgrade release
-helm upgrade mysql stable/mysql --version 1.6.4
+helm upgrade azure-sql-edge dbafromthecold/azure-sql-edge --version 1.1.0
 
 
 
 # confirm history
-helm history mysql
+helm history azure-sql-edge
 
 
 
@@ -104,17 +104,17 @@ kubectl get replicaset
 
 
 # try a rollback with kubectl - will fail as we have deleted the old replicaset
-kubectl rollout undo deployment/mysql
+kubectl rollout undo deployment/azure-sql-edge
 
 
 
 # but we still have the history of the release in Helm
-helm history mysql
+helm history azure-sql-edge
 
 
 
 # rollback with helm
-helm rollback mysql 1
+helm rollback azure-sql-edge 1
 
 
 
@@ -124,7 +124,7 @@ helm list
 
 
 # confirm rollback
-helm history mysql
+helm history azure-sql-edge
 
 
 
@@ -140,7 +140,7 @@ kubectl get secrets
 
 
 # let's a look at one of those secrets
-kubectl get secret sh.helm.release.v1.mysql.v1 -o yaml
+kubectl get secret sh.helm.release.v1.azure-sql-edge.v1 -o yaml
 
 
 

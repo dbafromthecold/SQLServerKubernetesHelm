@@ -37,38 +37,38 @@ helm repo add dbafromthecold https://raw.githubusercontent.com/dbafromthecold/SQ
 
 
 
-# search repository for a azuresqledge chart
+# search repository for a azure-sql-edge chart
 helm search repo dbafromthecold/azure-sql-edge --versions
 
 
 
 # show chart definition
-helm show chart dbafromthecold/azuresqledge
+helm show chart dbafromthecold/azure-sql-edge
 
 
 
 # show chart README
-helm show readme dbafromthecold/azuresqledge
+helm show readme dbafromthecold/azure-sql-edge
 
 
 
 # pipe README to file
-helm show readme dbafromthecold/azuresqledge > C:\Temp\README.txt
+helm show readme dbafromthecold/azure-sql-edge > C:\Temp\README.txt
 
 
 
 # show chart values
-helm show values dbafromthecold/azuresqledge > C:\Temp\values.txt
+helm show values dbafromthecold/azure-sql-edge > C:\Temp\values.txt
 
 
 
 # test deployment of chart
-helm install azuresqledge dbafromthecold/azuresqledge --dry-run --debug
+helm install azure-sql-edge dbafromthecold/azure-sql-edge --dry-run --debug
 
 
 
 # deploy chart
-helm install azuresqledge dbafromthecold/azuresqledge
+helm install azure-sql-edge dbafromthecold/azure-sql-edge
 
 
 
