@@ -17,6 +17,11 @@ kubectl config current-context
 
 
 
+# switch context if needed
+kubectl config use-context raspberrypi
+
+
+
 # test connection to cluster
 kubectl get nodes
 
