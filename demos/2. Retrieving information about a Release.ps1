@@ -69,7 +69,7 @@ helm list --all
 
 
 # delete release
-helm delete azuresqledge
+helm delete azure-sql-edge
 
 
 
