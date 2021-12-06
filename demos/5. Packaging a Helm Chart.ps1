@@ -125,7 +125,7 @@ kubectl get deployment -o jsonpath='{ .items[*].spec.template.spec.containers[*]
 
 
 # package the chart
-helm package .\azure-sql-edge-1.0.0 --destination .
+helm package .\azure-sql-edge-1.1.0 --destination .
 
 
 

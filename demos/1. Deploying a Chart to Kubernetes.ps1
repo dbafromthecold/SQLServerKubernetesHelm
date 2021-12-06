@@ -33,12 +33,12 @@ helm repo list
 
 
 # add repository
-helm repo add dbafromthecold XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+helm repo add dbafromthecold https://raw.githubusercontent.com/dbafromthecold/SQLServerKubernetesHelm/main/
 
 
 
 # search repository for a azuresqledge chart
-helm search repo dbafromthecold/azuresqledge
+helm search repo dbafromthecold/azure-sql-edge --versions
 
 
 
