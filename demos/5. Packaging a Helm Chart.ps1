@@ -32,6 +32,12 @@ rm .\ourchart\templates\*yaml
 
 
 
+# get azure sql edge image tags
+$repo = invoke-webrequest https://mcr.microsoft.com/v2/azure-sql-edge/tags/list
+$($repo.content | ConvertFrom-Json).tags
+
+
+
 # generate deployment yaml
 kubectl create deployment nginx `
 --image=nginx `
