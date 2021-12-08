@@ -34,12 +34,14 @@ To provide an overview of Helm and how it can be used to deploy applications (SQ
 <img src="images/helm_logo.png"  style="float: right"/>
 <!-- .slide: style="text-align: left;"> -->
 <br>
+<font size=6>
 A package manager for Kubernetes<br>
 Charts help define Kubernetes applications<br>
 With Helm you can: -<br>
 Mange complexity<br>
 Easily update and rollback<br>
 Share charts<br>
+</font>
 
 ---
 
