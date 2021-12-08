@@ -66,6 +66,11 @@ With Helm you can: -<br>
 
 ---
 
+### Chart Structure
+
+---
+
+
 ### My Raspberry Pi Kubernetes Cluster
 <!-- .slide: style="text-align: left;"> -->
 <font size="6">
@@ -75,11 +80,6 @@ With Helm you can: -<br>
 <p align="center">
 <img src="images/raspberrypi_kubernetes.png" />
 </p>
-
----
-
-### Chart Structure
-
 
 ---
 
