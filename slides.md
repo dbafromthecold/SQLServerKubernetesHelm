@@ -65,12 +65,8 @@ Graduated status within the CNCF in April 2020<br>
 ### Helm Hub
 
 <p align="center">
-<img src="images/artifact_hub.png" />
+<a href="https://artifacthub.io/">![Arctifact Hub](images/artifact_hub.png)</a>
 </p>
-
-<font size="6">
-<a href="https://artifacthub.io/">https://artifacthub.io/</a><br>
-</font>
 
 ---
 
