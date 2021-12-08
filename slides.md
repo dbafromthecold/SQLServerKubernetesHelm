@@ -47,7 +47,7 @@ Share charts<br>
 
 ### History of Helm
 <!-- .slide: style="text-align: left;"> -->
-<font size="6">
+<font size="8">
 Helm was created in 2015 at Deis<br>
 Helm Classic was introduced at KubeCon in November 2015<br>
 Helm Classic was merged with Google's Deployment Manager in January 2016<br>
