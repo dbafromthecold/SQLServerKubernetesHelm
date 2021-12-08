@@ -80,12 +80,21 @@ With Helm you can: -<br>
 
 ---
 
+### Chart Structure
+
+
+---
+
 # Demos
 
 ---
 
 ## Resources
 <!-- .slide: style="text-align: left;"> -->
-<font size="6">
+<font size="8">
 <a href="https://github.com/dbafromthecold/SQLServerKubernetesHelm">https://github.com/dbafromthecold/SQLServerKubernetesHelm</a><br>
 </font>
+
+<p align="center">
+<img src="images/qr_code.png" />
+</p>
