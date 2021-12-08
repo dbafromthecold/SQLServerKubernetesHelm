@@ -79,7 +79,7 @@ Graduated status within the CNCF in April 2020<br>
 </font>
 
 <p align="center">
-<img src="images/raspberrypi_k8scluster.png" />
+<img src="images/raspberrypi_kubernetes.png" />
 </p>
 
 ---
