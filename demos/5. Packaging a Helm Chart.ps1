@@ -13,50 +13,48 @@
 
 
 # create a chart
-helm create ourchart
+helm create testchart
 
 
 
 # view the chart directory
-ls .\ourchart
+ls ./testchart
 
 
 
 # view the templates directory
-ls .\ourchart\templates
+ls ./testchart/templates
 
 
 
-# remove all yaml files in the templates directory
-rm .\ourchart\templates\*yaml
+# remove all files in the templates directory
+rm -rf ./testchart/templates/*
 
 
 
-# get azure sql edge image tags
-$repo = invoke-webrequest https://mcr.microsoft.com/v2/azure-sql-edge/tags/list
+# get azure sql edge image tags - get this to work in bash
+repo=$(curl https://mcr.microsoft.com/v2/azure-sql-edge/tags/list/content/tags | jq)
 $($repo.content | ConvertFrom-Json).tags
 
 
 
 # copy yaml files into the chart
-TBD
+cp -R /mnt/c/git/dbafromthecold/SQLServerKubernetesHelm/yaml* ./testchart/templates/
 
 
 
-# replace NOTES.txt file
-rm .\ourchart\templates\NOTES.txt
-echo 'A test Helm Chart' > .\ourchart\templates\NOTES.txt
+# create NOTES.txt file
+echo 'A test Helm Chart' > ./testchart/templates/NOTES.txt
 
 
 
-# remove the charts and tests directory within the chart (they're not needed)
-rm -r .\ourchart\charts
-rm -r .\ourchart\templates\tests
+# remove the charts directory (not needed, no chart dependencies)
+rm -r .\testchart\charts
 
 
 
 # deploy the chart
-helm install ourchart .\ourchart
+helm install testchart ./testchart
 
 
 
@@ -71,7 +69,7 @@ kubectl get all
 
 
 # delete the release
-helm delete ourchart
+helm delete testchart
 
 
 
@@ -81,12 +79,12 @@ helm delete ourchart
 
 
 # also update the value.yaml file, removing the old file
-rm .\ourchart\values.yaml
+rm ./testchart/values.yaml
 
 
 
 # and add in a custom value
-echo 'containerImage: azure-sql-edge:1.0.3' > .\ourchart\values.yaml
+echo 'containerImage: azure-sql-edge:1.0.3' > ./testchart/values.yaml
 
 
 # update the deployment yaml to use the new default value
@@ -95,7 +93,7 @@ echo 'containerImage: azure-sql-edge:1.0.3' > .\ourchart\values.yaml
 
 
 # now redeploy the chart
-helm install ourchart .\ourchart
+helm install testchart ./testchart
 
 
 
@@ -115,7 +113,7 @@ kubectl get deployment -o jsonpath='{ .items[*].spec.template.spec.containers[*]
 
 
 # now upgrade the chart, overriding the image name in the values file
-helm upgrade ourchart .\ourchart --set containerImage=azure-sql-edge:1.0.4
+helm upgrade testchart ./testchart --set containerImage=mcr.microsoft.com/azure-sql-edge:1.0.4
 
 
 
@@ -125,9 +123,6 @@ kubectl get deployment -o jsonpath='{ .items[*].spec.template.spec.containers[*]
 
 
 # package the chart
-helm package .\azure-sql-edge-1.1.0 --destination .
+helm package ./testchart --destination .
 
 
-
-# view packaged chart
-ls C:\Charts\

@@ -24,12 +24,12 @@ git clone https://github.com/dbafromthecold/DemoHelmRepo.git
 
 
 # navigate to repo
-cd C:\git\DemoHelmRepo
+cd DemoHelmRepo
 
 
 
 # copy packaged chart into repo
-cp C:\charts\ourchart-0.1.0.tgz .
+cp ../testchart-0.1.0.tgz .
 
 
 
@@ -45,7 +45,7 @@ cat index.yaml
 
 # push chart to Github
 git add .
-git commit -m "added ourchart to repo"
+git commit -m "added testchart to repo"
 git push
 
 
@@ -57,32 +57,22 @@ git push
 
 
 # add Githb repo as a Helm repository
-helm repo add dbafromthecold https://raw.githubusercontent.com/dbafromthecold/DemoHelmRepo/master
+helm repo add testrepo https://raw.githubusercontent.com/dbafromthecold/DemoHelmRepo/master
 
 
 
-# navigate to folder containing repository names and URLs
-# C:\Users\apruski\AppData\Roaming\helm\
-
-
-
-# view cached index.yaml file for repository
-# C:\Users\apruski\AppData\Local\Temp\helm\repository
+# view new Helm repository
+helm repo list
 
 
 
 # search new Helm repository
-helm search repo dbafromthecold/ourchart
-
-
-
-# we can also see the chart in the Helm section of 
-# of the Kubernetes extension for vs code
+helm search repo testrepo/testchart
 
 
 
 # deploy chart from repository
-helm install ourchart dbafromthecold/ourchart
+helm install testchart testrepo/testchart
 
 
 

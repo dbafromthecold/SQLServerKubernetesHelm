@@ -52,11 +52,6 @@ kubectl get replicasets
 
 
 
-# view secrets
-kubectl get secrets
-
-
-
 ###################################################################################################
 # Rolling back without the old replicaset
 ###################################################################################################
@@ -93,8 +88,12 @@ kubectl get replicaset
 
 
 
+# get oldest replicaset
+replicaSet=$(kubectl get replicaset --sort-by='{.metadata.creationTimestamp}' --no-headers | head -1 | awk '{print $1}') && echo $replicaSet
+
+
 # delete old replicaset - replace NAME with the old replicaset name
-kubectl delete replicaset NAME
+kubectl delete replicaset $replicaSet
 
 
 
@@ -104,7 +103,7 @@ kubectl get replicaset
 
 
 # try a rollback with kubectl - will fail as we have deleted the old replicaset
-kubectl rollout undo deployment/azure-sql-edge
+kubectl rollout undo deployment/sqledge-deployment
 
 
 
@@ -134,6 +133,10 @@ kubectl get replicaset
 
 
 # the old replicaset is back!
+echo $replicaSet
+
+
+
 # this is due to the release history being stored as secrets in the k8s cluster
 kubectl get secrets
 
@@ -146,3 +149,8 @@ kubectl get secret sh.helm.release.v1.azure-sql-edge.v1 -o yaml
 
 # the secret is encoded. For further information on decoding these secrets, see here: -
 # https://dbafromthecold.com/2020/08/10/decoding-helm-secrets/ 
+
+
+
+kubectl get secret sh.helm.release.v1.azure-sql-edge.v1 \
+-o jsonpath="{ .data.release }" | base64 -d | base64 -d | gunzip -c | jq '.chart.templates[].data' | tr -d '"' | base64 -d

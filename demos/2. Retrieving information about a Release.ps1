@@ -23,28 +23,31 @@ helm status azure-sql-edge
 
 
 # get release manifests
-helm get manifest azure-sql-edge > C:\Temp\manifests.txt
+helm get manifest azure-sql-edge > manifests.txt
+notepad manifests.txt
 
 
 
 # get release values - no user values were supplied so file will be blank
-helm get values azure-sql-edge > C:\Temp\values.txt
+helm get values azure-sql-edge > values.txt
+notepad values.txt
 
 
 
 # get release notes
-helm get notes azure-sql-edge > C:\Temp\notes.txt
+helm get notes azure-sql-edge > notes.txt
+notepad notes.txt
 
 
 
 # get all from release
-helm get all azure-sql-edge  > C:\Temp\all.txt
+helm get all azure-sql-edge > all.txt
+notepad all.txt
 
 
 
 # view kubernetes objects
 kubectl get all
-
 
 
 
@@ -75,3 +78,8 @@ helm delete azure-sql-edge
 
 # confirm with --all flag
 helm list --all
+
+
+
+# confirm deployment deleted
+kubectl get all
