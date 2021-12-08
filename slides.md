@@ -30,16 +30,10 @@ To provide an overview of Helm and how it can be used to deploy applications (SQ
 ---
 
 ### What is Helm?
+
+<img src="images/helm_logo.png"  style="float: right"/>
 <!-- .slide: style="text-align: left;"> -->
-<font size="6">
-<a href="https://helm.sh/">https://helm.sh/</a><br>
-</font>
-
-<p align="left">
-<img src="images/helm_logo.png" />
-</p>
-
-<!-- .slide: style="text-align: right;"> -->
+<br>
 A package manager for Kubernetes<br>
 Charts help define Kubernetes applications<br>
 With Helm you can: -<br>
