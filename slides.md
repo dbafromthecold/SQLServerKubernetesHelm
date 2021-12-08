@@ -36,11 +36,11 @@ To provide an overview of Helm and how it can be used to deploy applications (SQ
 <br>
 <font size=8>
 A package manager for Kubernetes<br>
-Charts define applications
+Charts define applications<br>
 With Helm you can: -<br>
-- Mange complexity<br>
-- Easily update and rollback<br>
-- Share charts<br>
+    - Mange complexity<br>
+    - Easily update and rollback<br>
+    - Share charts<br>
 </font>
 
 ---
