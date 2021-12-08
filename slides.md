@@ -22,7 +22,7 @@ To provide an overview of Helm and how it can be used to deploy applications (SQ
 ### Agenda
 <!-- .slide: style="text-align: left;"> -->
 - An overview of Helm<br>
-- How to deploy an application (SQL Server) to Kubernetes using Helm<br>
+- Deploying an application<br>
 - Upgrading an application using Helm<br>
 - Rolling back an upgrade using Helm<br>
 - Chart Repositories
