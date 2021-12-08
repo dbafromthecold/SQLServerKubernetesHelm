@@ -27,6 +27,59 @@ To provide an overview of Helm and how it can be used to deploy applications (SQ
 - Rolling back an upgrade using Helm<br>
 - Chart Repositories
 
+--- 
+<!-- .slide: style="text-align: left;"> -->
+## What is Helm?
+
+<font size="6">
+<a href="https://helm.sh/">https://helm.sh/</a><br>
+</font>
+
+<p align="left">
+<img src="images/helm_logo.png" />
+</p>
+
+<!-- .slide: style="text-align: right;"> -->
+A package manager for Kubernetes<br>
+Charts help define Kubernetes applications<br>
+With Helm you can: -<br>
+Mange complexity<br>
+Easily update and rollback<br>
+Share charts<br>
+
+---
+<!-- .slide: style="text-align: left;"> -->
+## History of Helm
+
+Helm was created in 2015 at Deis<br>
+Helm Classic was introduced at KubeCon in November 2015<br>
+Helm Classic was merged with Google’s Deployment Manager in January 2016<br>
+Open source at github at https://github.com/helm/helm<br>
+More than 2 million downloads a month<br>
+Graduated status within the CNCF in April 2020<br>
+
+---
+
+<!-- .slide: style="text-align: left;"> -->
+<font size="6">
+<a href="https://artifacthub.io/">https://artifacthub.io/</a><br>
+</font>
+
+<p align="center">
+<img src="images/artifact_hub.png" />
+</p>
+
+---
+
+<!-- .slide: style="text-align: left;"> -->
+<font size="6">
+<a href="https://dbafromthecold.com/2020/11/30/building-a-raspberry-pi-cluster-to-run-azure-sql-edge-on-kubernetes/">Building a Raspberry Pi cluster to run Azure SQL Edge on Kubernetes</a><br>
+</font>
+
+<p align="center">
+<img src="images/raspberrypi_cluster.png" />
+</p>
+
 ---
 
 # Demos
