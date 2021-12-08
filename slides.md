@@ -89,8 +89,9 @@ With Helm you can: -<br>
 
 ## Resources
 <!-- .slide: style="text-align: left;"> -->
-<font size="8">
+<font size="6">
 <a href="https://github.com/dbafromthecold/SQLServerKubernetesHelm">https://github.com/dbafromthecold/SQLServerKubernetesHelm</a><br>
+<a href="https://www.pluralsight.com/courses/kubernetes-package-administration-helm">https://www.pluralsight.com/courses/kubernetes-package-administration-helm</a><br>
 </font>
 
 <p align="center">
