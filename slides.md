@@ -34,13 +34,13 @@ To provide an overview of Helm and how it can be used to deploy applications (SQ
 <img src="images/helm_logo.png"  style="float: right"/>
 <!-- .slide: style="text-align: left;"> -->
 <br>
-<font size=6>
+<font size=8>
 A package manager for Kubernetes<br>
 Charts help define Kubernetes applications<br>
 With Helm you can: -<br>
-Mange complexity<br>
-Easily update and rollback<br>
-Share charts<br>
+- Mange complexity<br>
+- Easily update and rollback<br>
+- Share charts<br>
 </font>
 
 ---
@@ -48,12 +48,12 @@ Share charts<br>
 ### History of Helm
 <!-- .slide: style="text-align: left;"> -->
 <font size="8">
-Helm was created in 2015 at Deis<br>
-Helm Classic was introduced at KubeCon in November 2015<br>
-Helm Classic was merged with Google's Deployment Manager in January 2016<br>
-Open source at github at https://github.com/helm/helm<br>
-More than 2 million downloads a month<br>
-Graduated status within the CNCF in April 2020<br>
+- Helm was created in 2015 at Deis<br>
+- Helm Classic was introduced at KubeCon in November 2015<br>
+- Helm Classic was merged with Google's Deployment Manager in January 2016<br>
+- Open source at github at https://github.com/helm/helm<br>
+- More than 2 million downloads a month<br>
+- Graduated status within the CNCF in April 2020<br>
 </font>
 
 ---
