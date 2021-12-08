@@ -27,7 +27,7 @@ To provide an overview of Helm and how it can be used to deploy applications (SQ
 - Rolling back an upgrade using Helm<br>
 - Chart Repositories
 
---- 
+---
 
 ### What is Helm?
 <!-- .slide: style="text-align: left;"> -->
