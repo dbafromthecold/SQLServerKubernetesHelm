@@ -28,9 +28,9 @@ To provide an overview of Helm and how it can be used to deploy applications (SQ
 - Chart Repositories
 
 --- 
-<!-- .slide: style="text-align: left;"> -->
-## What is Helm?
 
+## What is Helm?
+<!-- .slide: style="text-align: left;"> -->
 <font size="6">
 <a href="https://helm.sh/">https://helm.sh/</a><br>
 </font>
@@ -48,9 +48,9 @@ Easily update and rollback<br>
 Share charts<br>
 
 ---
-<!-- .slide: style="text-align: left;"> -->
-## History of Helm
 
+## History of Helm
+<!-- .slide: style="text-align: left;"> -->
 Helm was created in 2015 at Deis<br>
 Helm Classic was introduced at KubeCon in November 2015<br>
 Helm Classic was merged with Google’s Deployment Manager in January 2016<br>
@@ -60,6 +60,7 @@ Graduated status within the CNCF in April 2020<br>
 
 ---
 
+## Helm Hub
 <!-- .slide: style="text-align: left;"> -->
 <font size="6">
 <a href="https://artifacthub.io/">https://artifacthub.io/</a><br>
@@ -71,6 +72,7 @@ Graduated status within the CNCF in April 2020<br>
 
 ---
 
+# My Raspberry Pi Kubernetes Cluster
 <!-- .slide: style="text-align: left;"> -->
 <font size="6">
 <a href="https://dbafromthecold.com/2020/11/30/building-a-raspberry-pi-cluster-to-run-azure-sql-edge-on-kubernetes/">Building a Raspberry Pi cluster to run Azure SQL Edge on Kubernetes</a><br>
