@@ -48,24 +48,29 @@ notepad all.txt
 
 
 
+# view namespaces
+kubectl get ns
+
+
+
 # view kubernetes objects
-kubectl get all
+kubectl get all -n azure-sql-edge
 
 
 
 # view persistent volumes and persistent volume claims
-kubectl get pvc
+kubectl get pvc -n azure-sql-edge
 kubectl get pv
 
 
 
 # view secret
-kubectl get secrets
+kubectl get secrets -n azure-sql-edge
 
 
 
 # connect to azure sql edge
-IpAddress=$(kubectl get service sqledge-deployment --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+IpAddress=$(kubectl get service sqledge-deployment -n azure-sql-edge --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION"
 
 
@@ -91,7 +96,7 @@ helm list --all
 
 
 # view objects
-kubectl get all
+kubectl get all -n azure-sql-edge
 
 
 # delete release

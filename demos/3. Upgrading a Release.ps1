@@ -25,7 +25,7 @@ helm search repo dbafromthecold/azure-sql-edge --versions
 
 
 # install a specific version of the chart and change the sa password
-helm install azure-sql-edge dbafromthecold/azure-sql-edge --version 1.0.0  --set saPassword="NewPassword1122"
+helm install azure-sql-edge dbafromthecold/azure-sql-edge --version 1.0.0 #--set saPassword="NewPassword1122"
 
 
 
@@ -41,18 +41,18 @@ notepad values.txt
 
 
 # view kubernetes objects
-kubectl get all
+kubectl get all -n azure-sql-edge
 
 
 
 # view service
-kubectl get service
+kubectl get service -n azure-sql-edge
 
 
 
 # get Azure SQL Edge version (1557)
-IpAddress=$(kubectl get service sqledge-deployment --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
-mssql-cli -S $IpAddress -U sa -P NewPassword1122 -Q "SELECT @@VERSION AS [Version];"
+IpAddress=$(kubectl get service sqledge-deployment -n azure-sql-edge --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 
 
 
@@ -82,10 +82,10 @@ helm history azure-sql-edge
 
 
 # view kubernetes objects
-kubectl get all
+kubectl get all -n azure-sql-edge
 
 
 
 # get Azure SQL Edge version (1559)
-IpAddress=$(kubectl get service sqledge-deployment --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
-mssql-cli -S $IpAddress -U sa -P NewPassword1122 -Q "SELECT @@VERSION AS [Version];"
+IpAddress=$(kubectl get service sqledge-deployment -n azure-sql-edge --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"

@@ -25,12 +25,12 @@ helm history azure-sql-edge
 
 
 # view kubernetes objects
-kubectl get all
+kubectl get all -n azure-sql-edge
 
 
 
 # view replicasets
-kubectl get replicasets
+kubectl get replicasets -n azure-sql-edge
 
 
 
@@ -45,12 +45,12 @@ helm history azure-sql-edge
 
 
 # view kubernetes objects
-kubectl get all
+kubectl get all -n azure-sql-edge
 
 
 
 # view replicasets
-kubectl get replicasets
+kubectl get replicasets -n azure-sql-edge
 
 
 
@@ -81,32 +81,32 @@ helm history azure-sql-edge
 
 
 # view kubernetes objects
-kubectl get all
+kubectl get all -n azure-sql-edge
 
 
 
 # view replicasets
-kubectl get replicaset
+kubectl get replicaset -n azure-sql-edge
 
 
 
 # get oldest replicaset
-replicaSet=$(kubectl get replicaset --sort-by='{.metadata.creationTimestamp}' --no-headers | head -1 | awk '{print $1}') && echo $replicaSet
+replicaSet=$(kubectl get replicaset -n azure-sql-edge --sort-by='{.metadata.creationTimestamp}' --no-headers | head -1 | awk '{print $1}') && echo $replicaSet
 
 
 
 # delete old replicaset - replace NAME with the old replicaset name
-kubectl delete replicaset $replicaSet
+kubectl delete replicaset $replicaSet -n azure-sql-edge
 
 
 
 # confirm deletion
-kubectl get replicaset
+kubectl get replicaset -n azure-sql-edge
 
 
 
 # try a rollback with kubectl - will fail as we have deleted the old replicaset
-kubectl rollout undo deployment/sqledge-deployment
+kubectl rollout undo deployment/sqledge-deployment -n azure-sql-edge
 
 
 
@@ -131,7 +131,7 @@ helm history azure-sql-edge
 
 
 # view replicaset
-kubectl get replicaset
+kubectl get replicaset -n azure-sql-edge
 
 
 

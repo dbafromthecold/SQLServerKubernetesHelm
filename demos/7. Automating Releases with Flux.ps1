@@ -93,6 +93,12 @@ helm repo index .
 ls -al
 
 
+
+# view index.yaml
+cat index.yaml
+
+
+
 # push chart to repo
 git add .
 git commit -m "updated repo"
@@ -111,12 +117,12 @@ helm history azure-sql-edge
 
 
 # view kubernetes objects
-kubectl get all
+kubectl get all -n azure-sql-edge
 
 
 
 # connect to SQL
-IpAddress=$(kubectl get service sqledge-deployment --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+IpAddress=$(kubectl get service sqledge-deployment -n azure-sql-edge --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 
 
@@ -155,12 +161,12 @@ helm history azure-sql-edge
 
 
 # view kubernetes objects
-kubectl get all
+kubectl get all -n azure-sql-edge
 
 
 
-# connect to SQL
-IpAddress=$(kubectl get service sqledge-deployment --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+# connect to SQL (confirm new version)
+IpAddress=$(kubectl get service sqledge-deployment -n azure-sql-edge --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 
 

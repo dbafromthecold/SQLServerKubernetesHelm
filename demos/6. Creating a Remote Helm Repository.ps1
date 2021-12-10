@@ -89,7 +89,7 @@ helm status testchart
 
 
 # view kubernetes objects
-kubectl get all
+kubectl get all -n azure-sql-edge
 
 
 
@@ -99,14 +99,13 @@ helm get manifest testchart
 
 
 # connect to azure sql edge
-IpAddress=$(kubectl get service sqledge-deployment --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+IpAddress=$(kubectl get service sqledge-deployment -n azure-sql-edge --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 
 
 
 # clean up
 helm delete testchart
-rm -rf ./helmdemos
 rm index.yaml testchart-0.1.0.tgz
 git add .
 git commit -m "cleaned repo"

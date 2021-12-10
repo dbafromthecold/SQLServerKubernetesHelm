@@ -76,7 +76,7 @@ helm list
 
 
 # view kubernetes objects
-kubectl get all
+kubectl get all -n azure-sql-edge
 
 
 
@@ -119,17 +119,17 @@ helm list
 
 
 # view kubernetes objects
-kubectl get all
+kubectl get all -n azure-sql-edge
 
 
 
 # view the container image in the deployment
-kubectl get deployment -o jsonpath='{ .items[*].spec.template.spec.containers[*].image }' && echo ""
+kubectl get deployment -n azure-sql-edge -o jsonpath='{ .items[*].spec.template.spec.containers[*].image }' && echo ""
 
 
 
 # get Azure SQL Edge version (1557)
-IpAddress=$(kubectl get service sqledge-deployment --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+IpAddress=$(kubectl get service sqledge-deployment -n azure-sql-edge --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 
 
@@ -150,12 +150,12 @@ helm history testchart
 
 
 # view the container image in the deployment
-kubectl get deployment -o jsonpath='{ .items[*].spec.template.spec.containers[*].image }' && echo ""
+kubectl get deployment -n azure-sql-edge -o jsonpath='{ .items[*].spec.template.spec.containers[*].image }' && echo ""
 
 
 
 # get Azure SQL Edge version (1559)
-IpAddress=$(kubectl get service sqledge-deployment --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+IpAddress=$(kubectl get service sqledge-deployment -n azure-sql-edge --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 
 
