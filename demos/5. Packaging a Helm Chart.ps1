@@ -32,9 +32,9 @@ rm -rf ./testchart/templates/*
 
 
 
-# get azure sql edge image tags - get this to work in bash
-repo=$(curl https://mcr.microsoft.com/v2/azure-sql-edge/tags/list/ | jq)
-$($repo.content | ConvertFrom-Json).tags
+# get azure sql edge image tags
+curl https://mcr.microsoft.com/v2/azure-sql-edge/tags/list > list
+cat list
 
 
 
