@@ -13,6 +13,11 @@
 
 
 
+# install flux
+curl -s https://fluxcd.io/install.sh | sudo bash
+
+
+
 # confirm pre-requisites
 flux check --pre
 
@@ -36,8 +41,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m
-  url: https://raw.githubusercontent.com/dbafromthecold/DemoHelmRepo/main' | kubectl apply -f -
-kubectl apply -f helmsource.yaml 
+  url: https://raw.githubusercontent.com/dbafromthecold/DemoHelmRepo/main' | kubectl apply -f - 
 
 
 
@@ -65,6 +69,11 @@ spec:
       interval: 1m
   values:
     replicaCount: 1' | kubectl apply -f -
+
+
+
+# view resource
+kubectl get HelmRelease
 
 
 
@@ -120,6 +129,11 @@ helm repo index .
 
 
 
+# view index.yaml
+cat index.yaml
+
+
+
 # push new chart to repository
 git status
 git add .
@@ -130,6 +144,11 @@ git push
 
 # list releases
 helm list
+
+
+
+# view history
+helm history azure-sql-edge
 
 
 
@@ -147,7 +166,6 @@ mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 # clean up
 kubectl delete helmrelease azure-sql-edge
 kubectl delete HelmRepository helmrepo -n flux-system
-kubectl delete HelmRelease azure-sql-edge
 rm azure-sql-edge* index.yaml
 git add .
 git commit -m "cleaned demo repo"
