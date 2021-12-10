@@ -57,7 +57,7 @@ git push
 
 
 # add Githb repo as a Helm repository
-helm repo add testrepo https://raw.githubusercontent.com/dbafromthecold/DemoHelmRepo/master
+helm repo add testrepo https://raw.githubusercontent.com/dbafromthecold/DemoHelmRepo/main
 
 
 
@@ -105,3 +105,7 @@ mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 # clean up
 helm delete testchart
 rm -rf ./helmdemos
+rm index.yaml testchart-0.1.0.tgz
+git add .
+git commit -m "cleaned repo"
+git push

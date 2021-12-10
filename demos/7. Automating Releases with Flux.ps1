@@ -36,14 +36,13 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m
-  url: https://raw.githubusercontent.com/dbafromthecold/DemoHelmRepo/main' > helmsource.yaml
-kubectl apply -f helmsource.yaml
+  url: https://raw.githubusercontent.com/dbafromthecold/DemoHelmRepo/main' | kubectl apply -f -
+kubectl apply -f helmsource.yaml 
 
 
 
 # view resource
 kubectl get HelmRepository -n flux-system
-
 
 
 
@@ -65,8 +64,7 @@ spec:
         namespace: flux-system
       interval: 1m
   values:
-    replicaCount: 1' > helmrelease.yaml
-kubectl apply -f helmrelease.yaml
+    replicaCount: 1' | kubectl apply -f -
 
 
 
@@ -80,6 +78,10 @@ helm repo index .
 
 
 
+# view files in repo
+ls -al
+
+
 # push chart to repo
 git add .
 git commit -m "updated repo"
@@ -89,6 +91,11 @@ git push
 
 # confirm release deployed
 helm list
+
+
+
+# view history
+helm history azure-sql-edge
 
 
 
@@ -139,4 +146,9 @@ mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 
 # clean up
 kubectl delete helmrelease azure-sql-edge
-
+kubectl delete HelmRepository helmrepo -n flux-system
+kubectl delete HelmRelease azure-sql-edge
+rm azure-sql-edge* index.yaml
+git add .
+git commit -m "cleaned demo repo"
+git push
