@@ -103,6 +103,8 @@ With Helm you can: -<br>
 <font size="6">
 <a href="https://github.com/dbafromthecold/SQLServerKubernetesHelm">https://github.com/dbafromthecold/SQLServerKubernetesHelm</a><br>
 <a href="https://www.pluralsight.com/courses/kubernetes-package-administration-helm">https://www.pluralsight.com/courses/kubernetes-package-administration-helm</a><br>
+<a href=https://artifacthub.io/docs/topics/annotations/helm/">https://artifacthub.io/docs/topics/annotations/helm/</a><br>
+<a href=https://fluxcd.io/">https://fluxcd.io/</a><br>
 </font>
 
 <p align="center">
