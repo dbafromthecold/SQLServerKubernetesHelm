@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: sqledge-deployment
+  namespace: azure-sql-edge
 spec:
   replicas: 1
   selector:
@@ -45,6 +46,10 @@ spec:
               value: "SQL_Latin1_General_CP1_CI_AS"
             - name: MSSQL_LCID
               value: "1033"
+            - name: MSSQL_DATA_DIR
+              value: /var/opt/sqlserver/data
+            - name: MSSQL_LOG_DIR
+              value: /var/opt/sqlserver/log
             - name: MSSQL_SA_PASSWORD
               valueFrom:
                 secretKeyRef:

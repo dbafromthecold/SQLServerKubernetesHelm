@@ -20,8 +20,7 @@ ubuntu
 
 
 # navigage to work directory
-mkdir helmdemos
-cd helmdemos
+mkdir helmdemos && cd helmdemos
 
 
 
