@@ -68,8 +68,19 @@ With Helm you can: -<br>
 
 ### Chart Structure
 
+<p align="center">
+<img src="images/chart_directory.png" />
+</p>
+
 ---
 
+### Chart Template Directory
+
+<p align="center">
+<img src="images/chart_template_directory.png" />
+</p>
+
+---
 
 ### My Raspberry Pi Kubernetes Cluster
 <!-- .slide: style="text-align: left;"> -->
