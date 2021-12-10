@@ -33,8 +33,8 @@ helm list
 
 
 # confirm user supplied values
-helm get values azure-sql-edge > C:\Temp\values.txt
-notepad C:\Temp\values.txt
+helm get values azure-sql-edge > values.txt
+notepad values.txt
 
 
 
@@ -43,9 +43,24 @@ kubectl get all
 
 
 
+# view service
+kubectl get service
+
+
+
 # get Azure SQL Edge version (1557)
-$IpAddress=$(kubectl get service sqledge-deployment --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
-mssql-cli -S $IpAddress -U sa -P NewPassword1122 -Q "SELECT @@VERSION"
+IpAddress=$(kubectl get service sqledge-deployment --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+mssql-cli -S $IpAddress -U sa -P NewPassword1122 -Q "SELECT @@VERSION AS [Version];"
+
+
+
+# view release
+helm list --all
+
+
+
+# view status
+helm status azure-sql-edge
 
 
 
@@ -70,5 +85,5 @@ kubectl get all
 
 
 # get Azure SQL Edge version (1559)
-$IpAddress=$(kubectl get service sqledge-deployment --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
-mssql-cli -S $IpAddress -U sa -P NewPassword1122 -Q "SELECT @@VERSION"
+IpAddress=$(kubectl get service sqledge-deployment --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+mssql-cli -S $IpAddress -U sa -P NewPassword1122 -Q "SELECT @@VERSION AS [Version];"

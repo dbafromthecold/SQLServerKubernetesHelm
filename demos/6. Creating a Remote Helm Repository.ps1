@@ -78,3 +78,30 @@ helm install testchart testrepo/testchart
 
 # confirm deployment
 helm list
+
+
+
+# view status
+helm status testchart
+
+
+
+# view kubernetes objects
+kubectl get all
+
+
+
+# view values
+helm get manifest testchart
+
+
+
+# connect to azure sql edge
+IpAddress=$(kubectl get service sqledge-deployment --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
+
+
+
+# clean up
+helm delete testchart
+rm -rf ./helmdemos

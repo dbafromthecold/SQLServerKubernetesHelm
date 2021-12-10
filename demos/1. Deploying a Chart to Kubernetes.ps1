@@ -12,6 +12,17 @@
 
 
 
+# jump into WSL
+ubuntu
+
+
+
+# navigage to work directory
+mkdir helmdemos
+cd helmdemos
+
+
+
 # confirm current context
 kubectl config current-context
 
@@ -49,16 +60,6 @@ helm search repo dbafromthecold/azure-sql-edge --versions
 
 # show chart definition
 helm show chart dbafromthecold/azure-sql-edge
-
-
-
-# show chart README
-helm show notes dbafromthecold/azure-sql-edge
-
-
-
-# pipe README to file - ADD TO CHARTS
-helm show readme dbafromthecold/azure-sql-edge
 
 
 

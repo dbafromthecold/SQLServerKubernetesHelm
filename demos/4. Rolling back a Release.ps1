@@ -92,6 +92,7 @@ kubectl get replicaset
 replicaSet=$(kubectl get replicaset --sort-by='{.metadata.creationTimestamp}' --no-headers | head -1 | awk '{print $1}') && echo $replicaSet
 
 
+
 # delete old replicaset - replace NAME with the old replicaset name
 kubectl delete replicaset $replicaSet
 
@@ -153,4 +154,10 @@ kubectl get secret sh.helm.release.v1.azure-sql-edge.v1 -o yaml
 
 
 kubectl get secret sh.helm.release.v1.azure-sql-edge.v1 \
--o jsonpath="{ .data.release }" | base64 -d | base64 -d | gunzip -c | jq '.chart.templates[].data' | tr -d '"' | base64 -d
+-o jsonpath="{ .data.release }" | base64 -d | base64 -d | gunzip -c | jq '.chart.templates[].data' | tr -d '"' | base64 -d > helm_secret.yaml
+notepad helm_secret.yaml
+
+
+
+# clean up
+helm delete azure-sql-edge

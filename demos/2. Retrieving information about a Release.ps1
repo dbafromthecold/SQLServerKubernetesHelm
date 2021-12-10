@@ -51,6 +51,17 @@ kubectl get all
 
 
 
+# view secret
+kubectl get secrets
+
+
+
+# connect to azure sql edge
+$IpAddress=$(kubectl get service sqledge-deployment --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+mssql-cli -S $IpAddress -U sa -P NewPassword1122 -Q "SELECT @@VERSION"
+
+
+
 # view release history
 helm history azure-sql-edge
 
