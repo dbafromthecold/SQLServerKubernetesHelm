@@ -3,5 +3,5 @@
   labels:
     generator: helm
     usage: demos
-    date: {{ now | htmlDate }}
+    author: dbafromthecold
 {{- end }}
