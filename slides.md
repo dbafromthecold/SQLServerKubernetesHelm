@@ -1,4 +1,4 @@
-## Deploying SQL Server to Kubernetes using Helm
+## Deploying Applications to Kubernetes using Helm
 
 ---
 
@@ -15,7 +15,7 @@
 
 ### Session Aim
 <!-- .slide: style="text-align: left;"> -->
-To provide an overview of Helm and how it can be used to deploy applications (SQL Server) to Kubernetes
+To provide an overview of Helm and how it can be used to deploy applications to Kubernetes
 
 ---
 
@@ -26,6 +26,10 @@ To provide an overview of Helm and how it can be used to deploy applications (SQ
 - Upgrading an application using Helm<br>
 - Rolling back an upgrade using Helm<br>
 - Chart Repositories
+
+---
+
+# Helm
 
 ---
 
@@ -66,6 +70,30 @@ With Helm you can: -<br>
 
 ---
 
+# Demo Environment
+
+---
+
+### My Raspberry Pi Kubernetes Cluster
+<!-- .slide: style="text-align: left;"> -->
+<font size="6">
+<a href="https://dbafromthecold.com/2020/11/30/building-a-raspberry-pi-cluster-to-run-azure-sql-edge-on-kubernetes/">Building a Raspberry Pi cluster to run Azure SQL Edge on Kubernetes</a><br>
+</font>
+
+<p align="center">
+<img src="images/raspberrypi_kubernetes.png" />
+</p>
+
+---
+
+# Demos
+
+---
+
+# Packaging a Chart
+
+---
+
 ### Chart Structure
 
 <p align="center">
@@ -82,15 +110,23 @@ With Helm you can: -<br>
 
 ---
 
-### My Raspberry Pi Kubernetes Cluster
-<!-- .slide: style="text-align: left;"> -->
-<font size="6">
-<a href="https://dbafromthecold.com/2020/11/30/building-a-raspberry-pi-cluster-to-run-azure-sql-edge-on-kubernetes/">Building a Raspberry Pi cluster to run Azure SQL Edge on Kubernetes</a><br>
-</font>
+# Demos
 
-<p align="center">
-<img src="images/raspberrypi_kubernetes.png" />
-</p>
+---
+
+# Creating a Helm repository
+
+---
+
+### Github Repository
+
+
+
+---
+
+### Index.yaml
+
+
 
 ---
 
