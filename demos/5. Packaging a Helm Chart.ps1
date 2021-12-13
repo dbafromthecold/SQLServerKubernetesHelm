@@ -34,10 +34,13 @@ rm -rf ./testchart/templates/*
 
 
 
-# get azure sql edge image tags
-curl https://mcr.microsoft.com/v2/azure-sql-edge/tags/list > list
-cat list
+# remove the default values.yaml file
+rm ./testchart/values.yaml
 
+
+
+# create a values.yaml file
+echo 'saPassword: Testing1122' > ./testchart/values.yaml
 
 
 # copy templates into the chart
@@ -60,8 +63,18 @@ ls ./testchart
 
 
 
+# view chart.yaml
+cat ./testchart/Chart.yaml
+
+
+
 # list contents of template directory
 ls ./testchart/templates
+
+
+
+# view _helpers.tpl
+cat ./testchart/templates/_helpers.tpl && echo ""
 
 
 
@@ -96,14 +109,25 @@ vim ./testchart/templates/azure-sql-edge-deployment.yaml
 
 
 
-
 # also update the value.yaml file, removing the old file
 rm ./testchart/values.yaml
 
 
 
+# get azure sql edge image tags
+curl https://mcr.microsoft.com/v2/azure-sql-edge/tags/list > list
+cat list
+
+
+
 # and add in a custom value
-echo 'containerImage: mcr.microsoft.com/azure-sql-edge:1.0.3' > ./testchart/values.yaml
+echo 'saPassword: Testing1122
+containerImage: mcr.microsoft.com/azure-sql-edge:1.0.3' > ./testchart/values.yaml
+
+
+
+# confirm values.yaml
+cat ./testchart/values.yaml
 
 
 
@@ -177,11 +201,6 @@ helm package ./testchart --destination .
 
 # view packaged chart
 ls -al
-
-
-
-# view Chart.yaml
-cat ./testchart/Chart.yaml
 
 
 

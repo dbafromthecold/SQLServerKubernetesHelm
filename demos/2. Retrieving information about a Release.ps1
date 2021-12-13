@@ -65,6 +65,11 @@ kubectl get secrets -n azure-sql-edge
 
 
 
+# decode secret
+kubectl get secret azure-sql-edge-sa-secret -n azure-sql-edge -o custom-columns=":data.MSSQL_SA_PASSWORD" | base64 -d && echo ""
+
+
+
 # connect to azure sql edge
 IpAddress=$(kubectl get service sqledge-deployment -n azure-sql-edge --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"

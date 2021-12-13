@@ -121,6 +121,9 @@ kubectl get replicaset -n azure-sql-edge
 
 
 
+kubectl rollout history deployment sqledge-deployment  -n azure-sql-edge
+
+
 # try a rollback with kubectl - will fail as we have deleted the old replicaset
 kubectl rollout undo deployment/sqledge-deployment -n azure-sql-edge
 
