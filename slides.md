@@ -1,4 +1,4 @@
-## Deploying Applications to Kubernetes using Helm
+# Deploying Applications to Kubernetes using Helm
 
 ---
 
@@ -61,7 +61,7 @@ With Helm you can: -<br>
 ---
 
 ### Helm Hub
-
+<!-- .slide: style="text-align: left;"> -->
 <p align="center">
 <a href="https://artifacthub.io/">
 <img src="images/artifact_hub.png" />
@@ -70,7 +70,7 @@ With Helm you can: -<br>
 
 ---
 
-## Demo Environment
+# Demo Environment
 
 ---
 
@@ -138,7 +138,7 @@ With Helm you can: -<br>
 
 ---
 
-## Resources
+### Resources
 <!-- .slide: style="text-align: left;"> -->
 <font size="6">
 <a href="https://github.com/dbafromthecold/SQLServerKubernetesHelm">https://github.com/dbafromthecold/SQLServerKubernetesHelm</a><br>
