@@ -40,7 +40,7 @@ cat list
 
 
 
-# copy yaml files into the chart
+# copy templates into the chart
 cp -R /mnt/c/git/dbafromthecold/SQLServerKubernetesHelm/yaml/* ./testchart/templates/
 
 
@@ -77,6 +77,11 @@ helm list
 
 # view kubernetes objects
 kubectl get all -n azure-sql-edge
+
+
+
+# view deployment labels
+kubectl get deployment -n azure-sql-edge --show-labels
 
 
 
@@ -149,6 +154,11 @@ helm history testchart
 
 
 
+# view supplied values
+helm get values testchart
+
+
+
 # view the container image in the deployment
 kubectl get deployment -n azure-sql-edge -o jsonpath='{ .items[*].spec.template.spec.containers[*].image }' && echo ""
 
@@ -162,6 +172,16 @@ mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 
 # package the chart
 helm package ./testchart --destination .
+
+
+
+# view packaged chart
+ls -al
+
+
+
+# view Chart.yaml
+cat ./testchart/Chart.yaml
 
 
 

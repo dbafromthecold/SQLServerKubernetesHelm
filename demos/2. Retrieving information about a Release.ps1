@@ -25,26 +25,22 @@ helm status azure-sql-edge
 
 
 # get release manifests
-helm get manifest azure-sql-edge > manifests.txt
-notepad manifests.txt
+helm get manifest azure-sql-edge | code -
 
 
 
 # get release values - no user values were supplied so file will be blank
-helm get values azure-sql-edge > values.txt
-notepad values.txt
+helm get values azure-sql-edge | code -
 
 
 
 # get release notes
-helm get notes azure-sql-edge > notes.txt
-notepad notes.txt
+helm get notes azure-sql-edge | code -
 
 
 
 # get all from release
-helm get all azure-sql-edge > all.txt
-notepad all.txt
+helm get all azure-sql-edge | code -
 
 
 

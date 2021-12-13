@@ -54,6 +54,12 @@ kubectl get replicasets -n azure-sql-edge
 
 
 
+# get Azure SQL Edge version (1557)
+IpAddress=$(kubectl get service sqledge-deployment -n azure-sql-edge --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
+
+
+
 ###################################################################################################
 # Rolling back without the old replicaset
 ###################################################################################################
@@ -62,6 +68,16 @@ kubectl get replicasets -n azure-sql-edge
 
 # clean up previous release
 helm delete azure-sql-edge
+
+
+
+# confirm deletion
+helm list --all
+
+
+
+# view kubernetes objects
+kubectl get all -n azure-sql-edge
 
 
 
@@ -95,7 +111,7 @@ replicaSet=$(kubectl get replicaset -n azure-sql-edge --sort-by='{.metadata.crea
 
 
 
-# delete old replicaset - replace NAME with the old replicaset name
+# delete old replicaset
 kubectl delete replicaset $replicaSet -n azure-sql-edge
 
 
@@ -156,8 +172,7 @@ kubectl get secret sh.helm.release.v1.azure-sql-edge.v1 -o yaml
 
 
 kubectl get secret sh.helm.release.v1.azure-sql-edge.v1 \
--o jsonpath="{ .data.release }" | base64 -d | base64 -d | gunzip -c | jq '.chart.templates[].data' | tr -d '"' | base64 -d > helm_secret.yaml
-notepad helm_secret.yaml
+-o jsonpath="{ .data.release }" | base64 -d | base64 -d | gunzip -c | jq '.chart.templates[].data' | tr -d '"' | base64 -d | code -
 
 
 

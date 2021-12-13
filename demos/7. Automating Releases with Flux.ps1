@@ -35,6 +35,11 @@ flux bootstrap git \
 
 
 
+# get flux objects
+kubectl get all -n flux-system
+
+
+
 # create Helm Repository resource
 echo 'apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
