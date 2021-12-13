@@ -29,7 +29,7 @@ flux check --pre
 flux bootstrap git \
   --url=https://github.com/dbafromthecold/DemoHelmRepo \
   --username=dbafromthecold \
-  --password=XXXXXXXXXXXXXXXXXXXXX \
+  --password=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \
   --token-auth=true \
   --path=clusters/raspberrypi
 
