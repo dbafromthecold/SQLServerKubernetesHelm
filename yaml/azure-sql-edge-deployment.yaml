@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: sqledge-deployment
   namespace: azure-sql-edge
+  {{- template "chart.labels" . }}
 spec:
   replicas: 1
   selector:
