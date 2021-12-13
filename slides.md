@@ -70,7 +70,7 @@ With Helm you can: -<br>
 
 ---
 
-# Demo Environment
+## Demo Environment
 
 ---
 
@@ -95,7 +95,7 @@ With Helm you can: -<br>
 ---
 
 ### Chart Structure
-
+<!-- .slide: style="text-align: left;"> -->
 <p align="center">
 <img src="images/chart_directory.png" />
 </p>
@@ -103,7 +103,7 @@ With Helm you can: -<br>
 ---
 
 ### Chart Template Directory
-
+<!-- .slide: style="text-align: left;"> -->
 <p align="center">
 <img src="images/chart_template_directory.png" />
 </p>
@@ -119,7 +119,7 @@ With Helm you can: -<br>
 ---
 
 ### Github Repository
-
+<!-- .slide: style="text-align: left;"> -->
 <p align="center">
 <img src="images/helm_repository.png" />
 </p>
@@ -127,7 +127,7 @@ With Helm you can: -<br>
 ---
 
 ### Index.yaml
-
+<!-- .slide: style="text-align: left;"> -->
 <p align="center">
 <img src="images/index_yaml.png" />
 </p>
