@@ -120,13 +120,17 @@ With Helm you can: -<br>
 
 ### Github Repository
 
-
+<p align="center">
+<img src="images/helm_repository.png" />
+</p>
 
 ---
 
 ### Index.yaml
 
-
+<p align="center">
+<img src="images/index_yaml.png" />
+</p>
 
 ---
 
