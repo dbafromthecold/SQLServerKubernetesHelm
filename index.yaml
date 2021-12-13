@@ -3,9 +3,9 @@ entries:
   azure-sql-edge:
   - apiVersion: v2
     appVersion: 1.0.4
-    created: "2021-12-13T11:52:02.7763313Z"
+    created: "2021-12-13T16:15:56.1190944Z"
     description: An Azure SQL Edge Helm chart for Kubernetes
-    digest: 9a99a6c1cbd98d51f8b1cd885679fb35e8b42fff235095699d013d32d96796a7
+    digest: 7dd538a4304d6550111b2c859ef4462cc8b33096403b08e3136ab8dee14a4b36
     name: azure-sql-edge
     type: application
     urls:
@@ -13,12 +13,12 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.3
-    created: "2021-12-13T11:52:02.7753305Z"
+    created: "2021-12-13T16:15:56.1190944Z"
     description: An Azure SQL Edge Helm chart for Kubernetes
-    digest: 14bb188cc73efe4ee3edb47c95cbe55a5442b2cb4cf032b4dd181a8b40bf9b39
+    digest: 8e837bb74791c2642d9a5662af1805a403db70b1e6715c6d13dd7820136526ba
     name: azure-sql-edge
     type: application
     urls:
     - azure-sql-edge-1.0.0.tgz
     version: 1.0.0
-generated: "2021-12-13T11:52:02.7753305Z"
+generated: "2021-12-13T16:15:56.1180954Z"

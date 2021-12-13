@@ -40,6 +40,33 @@ kubectl get all -n flux-system
 
 
 
+# copy chart into repository
+cp /mnt/c/git/dbafromthecold/SQLServerKubernetesHelm/azure-sql-edge-1.0.0.tgz .
+
+
+
+# index repository
+helm repo index .
+
+
+
+# view files in repo
+ls -al
+
+
+
+# view index.yaml
+cat index.yaml
+
+
+
+# push chart to repo
+git add .
+git commit -m "updated repo"
+git push
+
+
+
 # create Helm Repository resource
 echo 'apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
@@ -81,33 +108,6 @@ spec:
 
 # view resource
 kubectl get HelmRelease
-
-
-
-# copy chart into repository
-cp /mnt/c/git/dbafromthecold/SQLServerKubernetesHelm/azure-sql-edge-1.0.0.tgz .
-
-
-
-# index repository
-helm repo index .
-
-
-
-# view files in repo
-ls -al
-
-
-
-# view index.yaml
-cat index.yaml
-
-
-
-# push chart to repo
-git add .
-git commit -m "updated repo"
-git push
 
 
 
