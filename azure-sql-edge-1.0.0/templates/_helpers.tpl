@@ -1,5 +1,5 @@
 {{/* Generate basic labels */}}
-{{- define "chart.labels" }}
+{{- define "azure-sql-edge.labels" }}
   labels:
     generator: helm
     usage: demos
