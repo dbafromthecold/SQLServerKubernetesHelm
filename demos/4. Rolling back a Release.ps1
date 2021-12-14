@@ -54,8 +54,13 @@ kubectl get replicasets -n azure-sql-edge
 
 
 
+# view the container image in the deployment
+kubectl get deployment -n azure-sql-edge -o jsonpath='{ .items[*].spec.template.spec.containers[*].image }' && echo ""
+
+
+
 # get Azure SQL Edge version (1557)
-IpAddress=$(kubectl get service sqledge-deployment -n azure-sql-edge --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+IpAddress=$(kubectl get service sqledge-deployment -n azure-sql-edge --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 
 
@@ -121,7 +126,9 @@ kubectl get replicaset -n azure-sql-edge
 
 
 
+# view history using kubectl
 kubectl rollout history deployment sqledge-deployment  -n azure-sql-edge
+
 
 
 # try a rollback with kubectl - will fail as we have deleted the old replicaset
@@ -146,6 +153,16 @@ helm list
 
 # confirm rollback
 helm history azure-sql-edge
+
+
+
+# view all kubernetes objects
+kubectl get all -n azure-sql-edge
+
+
+
+# view the container image in the deployment
+kubectl get deployment -n azure-sql-edge -o jsonpath='{ .items[*].spec.template.spec.containers[*].image }' && echo ""
 
 
 

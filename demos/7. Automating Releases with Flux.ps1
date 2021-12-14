@@ -84,6 +84,11 @@ kubectl get HelmRepository -n flux-system
 
 
 
+# confirm no releases
+helm list
+
+
+
 # create Helm Release resource
 echo 'apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
@@ -155,8 +160,17 @@ git push
 
 
 
+# view resource
+kubectl get HelmRelease
+
+
+
 # list releases
 helm list
+
+
+# view release status
+helm status azure-sql-edge
 
 
 
@@ -170,8 +184,13 @@ kubectl get all -n azure-sql-edge
 
 
 
+# view the container image in the deployment
+kubectl get deployment -n azure-sql-edge -o jsonpath='{ .items[*].spec.template.spec.containers[*].image }' && echo ""
+
+
+
 # connect to SQL (confirm new version)
-IpAddress=$(kubectl get service sqledge-deployment -n azure-sql-edge --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+IpAddress=$(kubectl get service sqledge-deployment -n azure-sql-edge --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 
 

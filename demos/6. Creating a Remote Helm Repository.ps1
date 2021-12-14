@@ -57,6 +57,10 @@ git push
 ##################################################
 
 
+# view Helm repos
+helm repo list
+
+
 
 # add Githb repo as a Helm repository
 helm repo add testrepo https://raw.githubusercontent.com/dbafromthecold/DemoHelmRepo/main
@@ -94,7 +98,7 @@ kubectl get all -n azure-sql-edge
 
 
 # view values
-helm get manifest testchart
+helm get manifest testchart | code -
 
 
 

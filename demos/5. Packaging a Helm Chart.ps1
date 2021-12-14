@@ -43,8 +43,14 @@ rm ./testchart/values.yaml
 echo 'saPassword: Testing1122' > ./testchart/values.yaml
 
 
+
 # copy templates into the chart
 cp -R /mnt/c/git/dbafromthecold/SQLServerKubernetesHelm/yaml/* ./testchart/templates/
+
+
+
+# view the templates directory
+ls ./testchart/templates
 
 
 
@@ -68,13 +74,8 @@ cat ./testchart/Chart.yaml
 
 
 
-# list contents of template directory
-ls ./testchart/templates
-
-
-
-# view _helpers.tpl
-cat ./testchart/templates/_helpers.tpl && echo ""
+# test deploying the chart
+helm install testchart ./testchart --dry-run --debug
 
 
 
@@ -100,6 +101,11 @@ kubectl get deployment -n azure-sql-edge --show-labels
 
 # delete the release
 helm delete testchart
+
+
+
+# view secret.yaml file - note the code to pull the value
+cat ./testchart/templates/azure-sql-edge-secret.yaml
 
 
 
@@ -138,7 +144,6 @@ vim ./testchart/templates/azure-sql-edge-deployment.yaml
 
 
 # now redeploy the chart
-helm install testchart ./testchart
 
 
 
@@ -147,7 +152,12 @@ helm list
 
 
 
-# view kubernetes objects
+# view status
+helm status testchart
+
+
+
+# view kubernetes objects - note deployment name
 kubectl get all -n azure-sql-edge
 
 
@@ -173,6 +183,11 @@ helm list
 
 
 
+# view status
+helm status testchart
+
+
+
 # view history
 helm history testchart
 
@@ -185,6 +200,11 @@ helm get values testchart
 
 # view the container image in the deployment
 kubectl get deployment -n azure-sql-edge -o jsonpath='{ .items[*].spec.template.spec.containers[*].image }' && echo ""
+
+
+
+# confirm kubernetes objects
+kubectl get all -n azure-sql-edge
 
 
 

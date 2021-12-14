@@ -42,7 +42,7 @@ helm list
 # view kubernetes objects
 kubectl get all -n azure-sql-edge
 
-
+##########ADD IN MORE THINGS
 
 # view service
 kubectl get service -n azure-sql-edge
@@ -50,7 +50,7 @@ kubectl get service -n azure-sql-edge
 
 
 # get Azure SQL Edge version (1557)
-IpAddress=$(kubectl get service sqledge-deployment -n azure-sql-edge --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+IpAddress=$(kubectl get service sqledge-deployment -n azure-sql-edge --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 
 

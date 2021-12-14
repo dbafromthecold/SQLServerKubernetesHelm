@@ -71,7 +71,7 @@ kubectl get secret azure-sql-edge-sa-secret -n azure-sql-edge -o custom-columns=
 
 
 # connect to azure sql edge
-IpAddress=$(kubectl get service sqledge-deployment -n azure-sql-edge --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+IpAddress=$(kubectl get service sqledge-deployment -n azure-sql-edge --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 
 
@@ -83,6 +83,11 @@ helm history azure-sql-edge
 
 # uninstall a release
 helm uninstall azure-sql-edge --keep-history
+
+
+
+# view release history
+helm history azure-sql-edge
 
 
 
@@ -98,6 +103,7 @@ helm list --all
 
 # view objects
 kubectl get all -n azure-sql-edge
+
 
 
 # delete release
