@@ -49,13 +49,13 @@ kubectl get secrets -n azure-sql-edge
 
 
 
-# view kubernetes objects
-kubectl get all -n azure-sql-edge
-
-
-
 # get persistent volumes and persistent volume claims
 kubectl get pv && kubectl get pvc -n azure-sql-edge
+
+
+
+# view kubernetes objects
+kubectl get all -n azure-sql-edge
 
 
 
@@ -87,6 +87,11 @@ helm upgrade azure-sql-edge dbafromthecold/azure-sql-edge --version 1.1.0
 
 # confirm release upgraded
 helm list
+
+
+
+# view status
+helm status azure-sql-edge
 
 
 

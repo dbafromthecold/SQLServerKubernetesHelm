@@ -75,7 +75,4 @@ spec:
         effect: "NoExecute"
         tolerationSeconds: 10
   strategy:
-    rollingUpdate:
-      maxSurge: 0
-      maxUnavailable: 1
-    type: RollingUpdate
+    type: Recreate
