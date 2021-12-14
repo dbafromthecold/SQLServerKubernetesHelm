@@ -63,7 +63,7 @@ spec:
             limits:
               memory: "2048Mi"
               cpu: "2000m"
-      terminationGracePeriodSeconds: 30
+      terminationGracePeriodSeconds: 10
       securityContext:
         fsGroup: 10001
       tolerations:
