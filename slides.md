@@ -71,7 +71,7 @@ With Helm you can: -<br>
 ---
 
 ### Deploying Azure SQL Edge to Kubernetes
-
+<!-- .slide: style="text-align: left;"> -->
 Typical yaml files are: -<br>
 - Namespace
 - Storage class 
