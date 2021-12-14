@@ -39,10 +39,25 @@ helm list
 
 
 
+# view namespace
+kubectl get ns
+
+
+
+# view secret
+kubectl get secrets -n azure-sql-edge
+
+
+
 # view kubernetes objects
 kubectl get all -n azure-sql-edge
 
-##########ADD IN MORE THINGS
+
+
+# get persistent volumes and persistent volume claims
+kubectl get pv && kubectl get pvc -n azure-sql-edge
+
+
 
 # view service
 kubectl get service -n azure-sql-edge

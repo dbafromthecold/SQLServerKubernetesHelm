@@ -55,6 +55,11 @@ helm repo add dbafromthecold https://raw.githubusercontent.com/dbafromthecold/SQ
 
 
 
+# list helm repositories
+helm repo list
+
+
+
 # search repository for a azure-sql-edge chart
 helm search repo dbafromthecold/azure-sql-edge
 
@@ -67,11 +72,6 @@ helm search repo dbafromthecold/azure-sql-edge --versions
 
 # show chart definition
 helm show chart dbafromthecold/azure-sql-edge
-
-
-
-# show chart values
-helm show values dbafromthecold/azure-sql-edge
 
 
 

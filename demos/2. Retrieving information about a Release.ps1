@@ -29,11 +29,6 @@ helm get manifest azure-sql-edge | code -
 
 
 
-# get release values - no user values were supplied so file will be blank
-helm get values azure-sql-edge | code -
-
-
-
 # get release notes
 helm get notes azure-sql-edge | code -
 
@@ -55,8 +50,7 @@ kubectl get all -n azure-sql-edge
 
 
 # view persistent volumes and persistent volume claims
-kubectl get pvc -n azure-sql-edge
-kubectl get pv
+kubectl get pvc -n azure-sql-edge && kubectl get pv
 
 
 
