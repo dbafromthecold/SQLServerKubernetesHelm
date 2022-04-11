@@ -144,6 +144,7 @@ vim ./testchart/templates/azure-sql-edge-deployment.yaml
 
 
 # now redeploy the chart
+helm install testchart ./testchart
 
 
 

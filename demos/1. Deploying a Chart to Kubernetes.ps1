@@ -21,7 +21,7 @@
 
 
 # jump into WSL
-ubuntu
+wsl --distribution Ubuntu-20.04
 
 
 
