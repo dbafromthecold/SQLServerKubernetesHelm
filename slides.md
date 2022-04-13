@@ -1,4 +1,4 @@
-## Deploying Applications to Kubernetes using Helm
+## Deploying SQL Server to Kubernetes using Helm
 
 ---
 
