@@ -41,7 +41,7 @@ kubectl config use-context raspberrypi
 
 
 # test connection to cluster
-kubectl get nodes -o wide
+kubectl get nodes
 
 
 

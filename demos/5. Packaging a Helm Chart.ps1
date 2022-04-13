@@ -74,6 +74,11 @@ cat ./testchart/Chart.yaml
 
 
 
+# view _helper.tpl file
+cat ./testchart/templates/_helpers.tpl && echo ""
+
+
+
 # test deploying the chart
 helm install testchart ./testchart --dry-run --debug
 
@@ -106,6 +111,11 @@ helm delete testchart
 
 # view secret.yaml file - note the code to pull the value
 cat ./testchart/templates/azure-sql-edge-secret.yaml
+
+
+
+# view values.yaml file
+cat ./testchart/values.yaml
 
 
 
