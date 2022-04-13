@@ -38,7 +38,7 @@ To provide an overview of Helm and how it can be used to deploy applications to 
 <img src="images/helm_logo.png"  style="float: right"/>
 <!-- .slide: style="text-align: left;"> -->
 <br>
-<font size="8">
+<font size="6">
 A package manager for Kubernetes<br>
 Charts define applications<br>
 With Helm you can: -<br>
