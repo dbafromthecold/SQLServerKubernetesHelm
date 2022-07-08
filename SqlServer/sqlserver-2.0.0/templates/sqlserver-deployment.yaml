@@ -26,7 +26,7 @@ spec:
             claimName: sqllog-pvc
       containers:
         - name: sqlserver
-          image: mcr.microsoft.com/mssql/server:2019-CU15-ubuntu-20.04
+          image: mcr.microsoft.com/mssql/server:2019-CU16-ubuntu-20.04
           ports:
             - containerPort: 1433
           volumeMounts:

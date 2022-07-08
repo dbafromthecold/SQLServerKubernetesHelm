@@ -51,7 +51,7 @@ helm repo list
 
 
 # add repository
-helm repo add dbafromthecold https://raw.githubusercontent.com/dbafromthecold/SQLServerKubernetesHelm/main/
+helm repo add dbafromthecold https://raw.githubusercontent.com/dbafromthecold/SQLServerKubernetesHelm/main/SqlServer
 
 
 
