@@ -65,7 +65,7 @@ kubectl get service -n sqlserver
 
 
 # get Azure SQL Edge version (1557)
-IpAddress=$(kubectl get service sqledge-deployment -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
+IpAddress=$(kubectl get service sqlserver-deployment -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 
 
@@ -81,7 +81,7 @@ helm status sqlserver
 
 
 # upgrade the release
-helm upgrade sqlserver dbafromthecold/sqlserver --version 1.1.0
+helm upgrade sqlserver dbafromthecold/sqlserver --version 2.0.0
 
 
 
@@ -110,6 +110,6 @@ kubectl get deployment -n sqlserver -o jsonpath='{ .items[*].spec.template.spec.
 
 
 
-# get Azure SQL Edge version (1559)
-IpAddress=$(kubectl get service sqledge-deployment -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+# get SQL Server version
+IpAddress=$(kubectl get service sqlserver-deployment -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"

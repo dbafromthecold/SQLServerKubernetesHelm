@@ -45,7 +45,7 @@ echo 'saPassword: Testing1122' > ./testchart/values.yaml
 
 
 # copy templates into the chart
-cp -R /mnt/c/git/dbafromthecold/SQLServerKubernetesHelm/yaml/* ./testchart/templates/
+cp -R /mnt/c/git/dbafromthecold/SQLServerKubernetesHelm/SqlServer/yaml/* ./testchart/templates/
 
 
 
@@ -130,15 +130,9 @@ rm ./testchart/values.yaml
 
 
 
-# get azure sql edge image tags
-curl https://mcr.microsoft.com/v2/sqlserver/tags/list > list
-cat list
-
-
-
 # and add in a custom value
 echo 'saPassword: Testing1122
-containerImage: mcr.microsoft.com/sqlserver:1.0.3' > ./testchart/values.yaml
+containerImage: mcr.microsoft.com/mssql/server:2019-CU15-ubuntu-20.04' > ./testchart/values.yaml
 
 
 
@@ -178,14 +172,14 @@ kubectl get deployment -n sqlserver -o jsonpath='{ .items[*].spec.template.spec.
 
 
 
-# get Azure SQL Edge version (1557)
-IpAddress=$(kubectl get service sqledge-deployment -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+# get SQL Server version
+IpAddress=$(kubectl get service -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 
 
 
 # now upgrade the chart, overriding the image name in the values file
-helm upgrade testchart ./testchart --set containerImage=mcr.microsoft.com/sqlserver:1.0.4
+helm upgrade testchart ./testchart --set containerImage=mcr.microsoft.com/mssql/server:2019-CU16-ubuntu-20.04
 
 
 
@@ -219,8 +213,8 @@ kubectl get all -n sqlserver
 
 
 
-# get Azure SQL Edge version (1559)
-IpAddress=$(kubectl get service sqledge-deployment -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+# get SQL Server version
+IpAddress=$(kubectl get service -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 
 

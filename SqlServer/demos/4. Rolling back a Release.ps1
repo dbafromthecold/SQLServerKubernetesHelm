@@ -59,8 +59,8 @@ kubectl get deployment -n sqlserver -o jsonpath='{ .items[*].spec.template.spec.
 
 
 
-# get Azure SQL Edge version (1557)
-IpAddress=$(kubectl get service sqledge-deployment -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
+# get SQL Server version
+IpAddress=$(kubectl get service sqlserver-deployment -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 
 
@@ -92,7 +92,7 @@ helm install sqlserver dbafromthecold/sqlserver --version 1.0.0
 
 
 # upgrade release
-helm upgrade sqlserver dbafromthecold/sqlserver --version 1.1.0
+helm upgrade sqlserver dbafromthecold/sqlserver --version 2.0.0
 
 
 
@@ -127,12 +127,12 @@ kubectl get replicaset -n sqlserver
 
 
 # view history using kubectl
-kubectl rollout history deployment sqledge-deployment  -n sqlserver
+kubectl rollout history deployment sqlserver-deployment  -n sqlserver
 
 
 
 # try a rollback with kubectl - will fail as we have deleted the old replicaset
-kubectl rollout undo deployment/sqledge-deployment -n sqlserver
+kubectl rollout undo deployment/sqlserver-deployment -n sqlserver
 
 
 
