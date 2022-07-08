@@ -1,0 +1,1 @@
+This is a demo chart for SQL Server for my Deploying SQL Edge to Kubernetes session
