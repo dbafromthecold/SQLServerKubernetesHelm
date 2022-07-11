@@ -59,13 +59,18 @@ kubectl get all -n sqlserver
 
 
 
+# view pod events
+kubectl describe pod -n sqlserver
+
+
+
 # view service
 kubectl get service -n sqlserver
 
 
 
 # get Azure SQL Edge version (1557)
-IpAddress=$(kubectl get service sqlserver-deployment -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
+IpAddress=$(kubectl get service sqlserver-service -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 
 
@@ -105,11 +110,21 @@ kubectl get all -n sqlserver
 
 
 
+# view pod events
+kubectl describe pod -n sqlserver
+
+
+
 # view the container image in the deployment
 kubectl get deployment -n sqlserver -o jsonpath='{ .items[*].spec.template.spec.containers[*].image }' && echo ""
 
 
 
+# view pod logs
+kubectl logs -n sqlserver $(kubectl get pod -l app=sqlserver -n sqlserver -o jsonpath='{ .items[*].metadata.name }')
+
+
+
 # get SQL Server version
-IpAddress=$(kubectl get service sqlserver-deployment -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+IpAddress=$(kubectl get service sqlserver-service -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
