@@ -21,11 +21,22 @@ To provide an overview of Helm and how it can be used to deploy applications to 
 
 ### Agenda
 <!-- .slide: style="text-align: left;"> -->
-- An overview of Helm<br>
+- An overview of Kubernetes & Helm<br>
 - Deploying an application<br>
 - Upgrading an application using Helm<br>
 - Rolling back an upgrade using Helm<br>
 - Chart Repositories
+
+---
+
+# Kubernetes
+
+---
+
+## What is Kubernetes?
+
+"Kubernetes is a portable, extensible open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available"<br>
+<font size="6"><a href="https://kubernetes.io/">kubernetes.io</a></font>
 
 ---
 
@@ -70,7 +81,7 @@ With Helm you can: -<br>
 
 ---
 
-### Deploying Azure SQL Edge to Kubernetes
+### Deploying SQL Server to Kubernetes
 <!-- .slide: style="text-align: left;"> -->
 Potential yaml files are: -<br>
 - Namespace
@@ -157,7 +168,6 @@ Potential yaml files are: -<br>
 <a href="https://github.com/dbafromthecold/SQLServerKubernetesHelm">https://github.com/dbafromthecold/SQLServerKubernetesHelm</a><br>
 <a href="https://www.pluralsight.com/courses/kubernetes-package-administration-helm">https://www.pluralsight.com/courses/kubernetes-package-administration-helm</a><br>
 <a href="https://artifacthub.io/">https://artifacthub.io</a><br>
-<a href="https://fluxcd.io/">https://fluxcd.io</a><br>
 </font>
 
 <p align="center">
