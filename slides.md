@@ -34,7 +34,7 @@ To provide an overview of Helm and how it can be used to deploy applications to 
 ---
 
 ## What is Kubernetes?
-
+<!-- .slide: style="text-align: left;"> -->
 "Kubernetes is a portable, extensible open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available"<br>
 <font size="6"><a href="https://kubernetes.io/">kubernetes.io</a></font>
 
