@@ -3,9 +3,9 @@ entries:
   sqlserver:
   - apiVersion: v2
     appVersion: 15.0.4236.7
-    created: "2022-07-08T10:52:29.0350106+01:00"
+    created: "2022-07-11T11:12:07.8527447+01:00"
     description: An SQL Server Helm chart for Kubernetes
-    digest: d4f2fcd9755453d76f6e1821d50bc26b9059e9c37923e496ad7df2200af11d0c
+    digest: ceb208b64dbc779eb8ab302b1b02619ea206060130787b13c938709bf75effba
     name: sqlserver
     type: application
     urls:
@@ -13,12 +13,12 @@ entries:
     version: 2.0.0
   - apiVersion: v2
     appVersion: 15.0.4198.2
-    created: "2022-07-08T10:52:29.0345629+01:00"
+    created: "2022-07-11T11:12:07.8523196+01:00"
     description: An SQL Server Helm chart for Kubernetes
-    digest: 0b561a95071266f2b0f05c2eae7fe8f8a8fdef53d224d6a9408354ec147c5372
+    digest: 482fc3f9f03eee989accb1aca7d5623093dbf75648aca6329f1a202987c5a933
     name: sqlserver
     type: application
     urls:
     - sqlserver-1.0.0.tgz
     version: 1.0.0
-generated: "2022-07-08T10:52:29.0339264+01:00"
+generated: "2022-07-11T11:12:07.8516993+01:00"
