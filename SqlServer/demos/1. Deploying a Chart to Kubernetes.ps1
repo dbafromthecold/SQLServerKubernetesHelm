@@ -25,7 +25,7 @@ wsl --distribution Ubuntu-20.04
 
 
 
-# navigage to work directory
+# navigate to work directory
 mkdir helmdemos && cd helmdemos
 
 
