@@ -69,8 +69,9 @@ kubectl get service -n sqlserver
 
 
 
-# get version (1557)
-IpAddress=$(kubectl get service sqlserver-service -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
+# get sql server version
+#IpAddress=$(kubectl get service sqlserver-service -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
+IpAddress=$(kubectl get service sqlserver-service -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].hostname") && echo $IpAddress
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 
 
@@ -126,5 +127,6 @@ kubectl logs -n sqlserver $(kubectl get pod -l app=sqlserver -n sqlserver -o jso
 
 
 # get SQL Server version
-IpAddress=$(kubectl get service sqlserver-service -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip")
+#IpAddress=$(kubectl get service sqlserver-service -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
+IpAddress=$(kubectl get service sqlserver-service -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].hostname") && echo $IpAddress
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"

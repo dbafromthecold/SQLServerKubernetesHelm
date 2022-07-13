@@ -36,8 +36,8 @@ kubectl config current-context
 
 
 # switch context if needed
-kubectl config use-context kubernetes1
-
+#kubectl config use-context kubernetes1
+kubectl config use-context docker-desktop
 
 
 # test connection to cluster
