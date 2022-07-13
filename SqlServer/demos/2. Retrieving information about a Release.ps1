@@ -69,7 +69,7 @@ kubectl get secret sqlserver-sa-secret -n sqlserver -o custom-columns=":data.MSS
 
 
 
-# connect to azure sql edge
+# connect to sql server
 IpAddress=$(kubectl get service sqlserver-service -n sqlserver --no-headers -o custom-columns=":status.loadBalancer.ingress[*].ip") && echo $IpAddress
 mssql-cli -S $IpAddress -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 
