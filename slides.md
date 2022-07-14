@@ -21,22 +21,11 @@ To provide an overview of Helm and how it can be used to deploy applications to 
 
 ### Agenda
 <!-- .slide: style="text-align: left;"> -->
-- An overview of Kubernetes & Helm<br>
+- An overview of Helm<br>
 - Deploying an application<br>
 - Upgrading an application using Helm<br>
 - Rolling back an upgrade using Helm<br>
 - Chart Repositories
-
----
-
-# Kubernetes
-
----
-
-## What is Kubernetes?
-<!-- .slide: style="text-align: left;"> -->
-"Kubernetes is a portable, extensible open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available"<br>
-<font size="6"><a href="https://kubernetes.io/">kubernetes.io</a></font>
 
 ---
 
@@ -94,22 +83,6 @@ Potential yaml files are: -<br>
 
 ---
 
-# Demo Environment
-
----
-
-### My Raspberry Pi Kubernetes Cluster
-<!-- .slide: style="text-align: left;"> -->
-<font size="6">
-<a href="https://dbafromthecold.com/2020/11/30/building-a-raspberry-pi-cluster-to-run-azure-sql-edge-on-kubernetes/">Building a Raspberry Pi cluster to run Azure SQL Edge on Kubernetes</a><br>
-</font>
-
-<p align="center">
-<img src="images/raspberrypi_kubernetes.png" />
-</p>
-
----
-
 # Demos
 
 ---
@@ -131,10 +104,6 @@ Potential yaml files are: -<br>
 <p align="center">
 <img src="images/chart_template_directory.png" />
 </p>
-
----
-
-# Demos
 
 ---
 
